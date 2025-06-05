@@ -7,6 +7,7 @@ import Projects from '../components/Projects';
 import WorkExperience from '../components/WorkExperience';
 import Education from '../components/Education';
 import Resume from '../components/Resume';
+import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -22,6 +23,7 @@ const Index = () => {
       <WorkExperience />
       <Education />
       <Resume />
+      <Blog />
       <Contact />
       <Footer />
     </div>
