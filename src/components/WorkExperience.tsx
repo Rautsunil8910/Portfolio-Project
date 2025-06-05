@@ -46,14 +46,14 @@ const WorkExperience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 bg-white">
+    <section id="experience" className="py-20 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Work Experience
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-          <p className="text-xl text-gray-600 mt-6 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mt-6 max-w-3xl mx-auto">
             Building impactful data solutions across diverse industries
           </p>
         </div>
@@ -72,18 +72,18 @@ const WorkExperience = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
 
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 ml-16 md:ml-0 hover:transform hover:scale-105">
+                  <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 ml-16 md:ml-0 hover:transform hover:scale-105">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-800 mb-1">{exp.title}</h3>
-                        <p className="text-lg text-blue-600 font-semibold">{exp.company}</p>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">{exp.title}</h3>
+                        <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-4 mb-4 text-sm text-gray-600 dark:text-gray-400">
                       <div className="flex items-center gap-1">
                         <Calendar size={16} />
                         <span>{exp.duration}</span>
@@ -95,10 +95,10 @@ const WorkExperience = () => {
                     </div>
 
                     <div className="mb-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Key Responsibilities:</h4>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Key Responsibilities:</h4>
                       <ul className="space-y-2">
                         {exp.responsibilities.map((responsibility, idx) => (
-                          <li key={idx} className="text-gray-600 text-sm leading-relaxed flex items-start">
+                          <li key={idx} className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed flex items-start">
                             <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             {responsibility}
                           </li>
@@ -107,12 +107,12 @@ const WorkExperience = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Technologies:</h4>
+                      <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium"
+                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs font-medium"
                           >
                             {tech}
                           </span>

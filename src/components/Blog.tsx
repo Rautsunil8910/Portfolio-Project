@@ -37,21 +37,21 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 px-4 bg-white">
+    <section id="blog" className="py-20 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Latest Blog Posts
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Sharing insights on data engineering, AI, and technology trends
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="hover:shadow-lg transition-shadow duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-t-lg overflow-hidden">
+            <Card key={post.id} className="hover:shadow-lg transition-shadow duration-300 group bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+              <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-t-lg overflow-hidden">
                 <img 
                   src={post.image} 
                   alt={post.title}
@@ -59,7 +59,7 @@ const Blog = () => {
                 />
               </div>
               <CardHeader>
-                <div className="flex items-center text-sm text-gray-500 mb-2">
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <Calendar className="h-4 w-4 mr-2" />
                   {new Date(post.date).toLocaleDateString('en-US', { 
                     year: 'numeric', 
@@ -69,17 +69,17 @@ const Blog = () => {
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-gray-900 dark:text-gray-100">
                   {post.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                  className="w-full group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-600 transition-colors"
                 >
                   <Book className="h-4 w-4 mr-2" />
                   Read More
