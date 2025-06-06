@@ -4,6 +4,21 @@ import { Download, Github, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleDownloadResume = () => {
+    // Create a sample PDF URL - in a real app, this would be your actual PDF file
+    const pdfUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    window.open(pdfUrl, '_blank');
+  };
+
+  const handleGitHubClick = () => {
+    window.open('https://github.com', '_blank');
+  };
+
+  const handleContactClick = () => {
+    const contactSection = document.querySelector('#contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-4 pt-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto text-center">
@@ -32,6 +47,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
+              onClick={handleDownloadResume}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <Download className="mr-2 h-5 w-5" />
@@ -40,6 +56,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={handleGitHubClick}
               className="hover:bg-blue-50 dark:hover:bg-blue-900/20 transform hover:scale-105 transition-all duration-200 border-2 border-blue-600 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
               <Github className="mr-2 h-5 w-5" />
@@ -48,6 +65,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={handleContactClick}
               className="hover:bg-purple-50 dark:hover:bg-purple-900/20 transform hover:scale-105 transition-all duration-200 border-2 border-purple-600 text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
             >
               <Mail className="mr-2 h-5 w-5" />
