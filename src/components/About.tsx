@@ -35,7 +35,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                  <p className="text-gray-800 dark:text-gray-200 font-medium">alex.johnson@email.com</p>
+                  <p className="text-gray-800 dark:text-gray-200 font-medium">rautsunil891@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -44,7 +44,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
-                  <p className="text-gray-800 dark:text-gray-200 font-medium">+1 (555) 123-4567</p>
+                  <p className="text-gray-800 dark:text-gray-200 font-medium">+1 (249) 989-4725</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -53,7 +53,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                  <p className="text-gray-800 dark:text-gray-200 font-medium">San Francisco, CA</p>
+                  <p className="text-gray-800 dark:text-gray-200 font-medium">Barrie, ON</p>
                 </div>
               </div>
             </div>

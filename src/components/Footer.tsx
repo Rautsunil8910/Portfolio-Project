@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Alex Johnson
+              Sunil Raut
             </h3>
             <p className="text-gray-400 dark:text-gray-500 leading-relaxed">
               Data Engineer passionate about transforming data into actionable insights and building scalable AI solutions.
@@ -40,9 +40,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-2 text-gray-400 dark:text-gray-500">
-              <p>alex.johnson@email.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>rautsunil891@gmail.com</p>
+              <p>+1 (249) 989-4725</p>
+              <p>Barrie, ON</p>
             </div>
           </div>
         </div>

@@ -5,10 +5,10 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 const Education = () => {
   const education = [
     {
-      degree: "Master of Science in Data Science",
-      institution: "Stanford University",
-      duration: "2017 - 2019",
-      location: "Stanford, CA",
+      degree: "Post Graduation in AI",
+      institution: "Georgian College",
+      duration: "2024 - 2025",
+      location: "Barrie, ON",
       highlights: [
         "Graduated Magna Cum Laude with 3.9 GPA",
         "Thesis: 'Real-time Anomaly Detection in Streaming Data'",

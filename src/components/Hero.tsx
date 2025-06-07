@@ -37,7 +37,7 @@ const Hero = () => {
 
           {/* Name and Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 dark:from-gray-100 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-            Alex Johnson
+            Sunil Raut
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             Data Engineer | AI Enthusiast | Building intelligent solutions that transform data into insights
