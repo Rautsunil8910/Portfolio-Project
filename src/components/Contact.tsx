@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,62 +12,90 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSending, setIsSending] = useState(false);
+
+  // 📨 Handle form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setIsSending(true);
+
+    emailjs
+      .send(
+        'service_8l6xxzy',      // 🔹 Replace with your actual EmailJS Service ID
+        'template_erw3mgx',     // 🔹 Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message
+        },
+        'jlfNBIrKQbJyMsZL3'       // 🔹 Replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          console.log('✅ Message sent:', result.text);
+          alert('Message sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+          setIsSending(false);
+        },
+        (error) => {
+          console.error('❌ Failed to send message:', error.text);
+          alert('Something went wrong. Please try again later.');
+          setIsSending(false);
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // 🧠 Handle input change
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
+  // 📞 Contact info
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "alex.johnson@email.com",
-      href: "mailto:alex.johnson@email.com",
+      value: "sunilraut2025@gmail.com",
+      href: "mailto:sunilraut2025@gmail.com",
       color: "blue"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+1 (249) 989-4725",
+      href: "tel:+12499894725",
       color: "green"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Barrie, ON",
       href: null,
       color: "purple"
     }
   ];
 
+  // 🌐 Social Links
   const socialLinks = [
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/sunilr1/",
       color: "blue"
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Rautsunil8910",
       color: "gray"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:alex.johnson@email.com",
+      href: "mailto:sunilraut2025@gmail.com",
       color: "red"
     }
   ];
@@ -93,19 +121,32 @@ const Contact = () => {
               <div className="space-y-4">
                 {contactInfo.map((info) => (
                   <div key={info.label} className="flex items-center space-x-4">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                      info.color === 'blue' ? 'bg-blue-100' :
-                      info.color === 'green' ? 'bg-green-100' : 'bg-purple-100'
-                    }`}>
-                      <info.icon className={`h-6 w-6 ${
-                        info.color === 'blue' ? 'text-blue-600' :
-                        info.color === 'green' ? 'text-green-600' : 'text-purple-600'
-                      }`} />
+                    <div
+                      className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                        info.color === 'blue'
+                          ? 'bg-blue-100'
+                          : info.color === 'green'
+                          ? 'bg-green-100'
+                          : 'bg-purple-100'
+                      }`}
+                    >
+                      <info.icon
+                        className={`h-6 w-6 ${
+                          info.color === 'blue'
+                            ? 'text-blue-600'
+                            : info.color === 'green'
+                            ? 'text-green-600'
+                            : 'text-purple-600'
+                        }`}
+                      />
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">{info.label}</p>
                       {info.href ? (
-                        <a href={info.href} className="text-gray-800 font-medium hover:text-blue-600 transition-colors">
+                        <a
+                          href={info.href}
+                          className="text-gray-800 font-medium hover:text-blue-600 transition-colors"
+                        >
                           {info.value}
                         </a>
                       ) : (
@@ -126,9 +167,11 @@ const Contact = () => {
                     key={social.label}
                     href={social.href}
                     className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 hover:transform hover:scale-110 ${
-                      social.color === 'blue' ? 'bg-blue-100 hover:bg-blue-200 text-blue-600' :
-                      social.color === 'gray' ? 'bg-gray-100 hover:bg-gray-200 text-gray-600' :
-                      'bg-red-100 hover:bg-red-200 text-red-600'
+                      social.color === 'blue'
+                        ? 'bg-blue-100 hover:bg-blue-200 text-blue-600'
+                        : social.color === 'gray'
+                        ? 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+                        : 'bg-red-100 hover:bg-red-200 text-red-600'
                     }`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -158,7 +201,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full"
-                      placeholder="John Doe"
+                      placeholder="Your name here..."
                     />
                   </div>
                   <div>
@@ -173,7 +216,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full"
-                      placeholder="john@example.com"
+                      placeholder="youremail@gmail.com"
                     />
                   </div>
                 </div>
@@ -192,13 +235,16 @@ const Contact = () => {
                     placeholder="Tell me about your project or how I can help you..."
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSending}
+                  className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl ${
+                    isSending ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
                 >
                   <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSending ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>

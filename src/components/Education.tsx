@@ -5,38 +5,39 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 const Education = () => {
   const education = [
     {
-      degree: "Post Graduation in AI",
-      institution: "Georgian College",
-      duration: "2024 - 2025",
+      degree: "Post Graduation in AI and Big Data Analytics",
+      institution: "Georgian College, Barrie",
+      duration: "2023 - 2025",
       location: "Barrie, ON",
       highlights: [
-        "Graduated Magna Cum Laude with 3.9 GPA",
-        "Thesis: 'Real-time Anomaly Detection in Streaming Data'",
-        "Teaching Assistant for Machine Learning Fundamentals course",
-        "President of Data Science Student Association"
+        "Graduated  with 3.9 GPA",
+          "Dean's List for 4 consecutive semesters",
+        "Thesis: 'Educational Virtual Assistant Using LLma'",
+        "Member of Data Science Student Association"
       ],
-      courses: ["Machine Learning", "Big Data Analytics", "Statistical Modeling", "Deep Learning"]
+      courses: ["Python Programming","Data System Architecture", "Business Intelligence","Data Visualization","Data Mining", "Machine Learning", "Mathmatics","Cloud Infrastruture", "Statistical Modeling", "Deep Learning"]
     },
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of California, Berkeley",
-      duration: "2013 - 2017",
-      location: "Berkeley, CA",
+      degree: "Bachelor in Electronics and Communication Engineering",
+      institution: "Tribhuvan University, Kathmandu",
+      duration: "2016 - 2021",
+      location: "Kathmandu, Nepal",
       highlights: [
         "Graduated Summa Cum Laude with 3.85 GPA",
         "Dean's List for 6 consecutive semesters",
-        "Senior Capstone: Distributed Computing Framework",
+        "Senior Capstone: Automatic Menu and Ordering System for Restaurant",
         "Member of ACM and IEEE student chapters"
       ],
-      courses: ["Data Structures", "Algorithms", "Database Systems", "Software Engineering"]
+      courses: ["Data Structures", "Algorithms", "Database Systems", "Digital Singal Processing","Wireless Communication","Big Data Technologies","Remote Sensing"]
     }
   ];
 
   const certifications = [
-    "AWS Certified Data Engineer - Professional",
-    "Microsoft Azure Data Engineer Associate",
-    "Google Cloud Professional Data Engineer",
-    "Certified Kubernetes Administrator (CKA)"
+    "Python",
+    "Machine Learning Fundamentals",
+      "AWS Academy Machine Learning",
+      "MS SQL",
+      "Databricks Core Concept"
   ];
 
   return (

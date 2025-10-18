@@ -16,7 +16,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a passionate Data Engineer with over 5 years of experience in building scalable data pipelines and implementing AI solutions. I specialize in transforming raw data into actionable insights that drive business decisions.
+              I'm a passionate Data Engineer with over 4 years of experience in building scalable data pipelines and implementing AI solutions. I specialize in transforming raw data into actionable insights that drive business decisions.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               My expertise spans across cloud platforms like Azure and AWS, with a strong focus on real-time data processing using technologies like Apache Kafka and Spark. I'm constantly exploring the latest advancements in AI and machine learning to solve complex data challenges.

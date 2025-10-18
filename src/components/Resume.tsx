@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/button';
 const Resume = () => {
   const handleDownloadResume = () => {
     // Create a sample PDF URL - in a real app, this would be your actual PDF file
-    const pdfUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    const pdfUrl = '/Resume Sunil Raut.pdf';
     window.open(pdfUrl, '_blank');
   };
 
   const handleViewResume = () => {
     // Create a sample PDF URL - in a real app, this would be your actual PDF file
-    const pdfUrl = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    const pdfUrl = '/Resume Sunil Raut.pdf';
     window.open(pdfUrl, '_blank');
   };
 
